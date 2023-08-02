@@ -1,0 +1,13 @@
+// function MintToken {
+//     return (
+//         <div>
+//             Mint Token Section
+//             <div>
+//                 <button>Create Token</button>
+//                 <button>Mint Token</button>
+//                 <button>Check Balance</button>
+//                 <button>Create Token</button>
+//             </div>
+//         </div>
+//     )
+// }

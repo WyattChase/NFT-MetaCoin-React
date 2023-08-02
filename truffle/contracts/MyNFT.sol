@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 
 pragma solidity ^0.8.4;
-import "@openzeppelin/contracts/utils/Strings.sol";
+
 
 
 contract MyNFT {
@@ -13,7 +13,7 @@ contract MyNFT {
     uint256 tokenCounter = 1;
     mapping(uint256 => address) internal idToOwner;
     mapping(uint256 => string) internal idToEyeColor;
-    mapping(uint256 => string) internal idToUrL;
+    // mapping(uint256 => string) internal idToUrL;
     mapping(uint256 => string) internal idToHairColor;
 
 
@@ -21,7 +21,6 @@ contract MyNFT {
         uint256 _tokenId = tokenCounter;
         idToEyeColor[_tokenId] = colors[random(0, 5)];
         idToHairColor[_tokenId] = colors[random(0, 5)];
-        idToUrL[_tokenId] = "https://github.com/WyattChase/star-wars-guide/blob/master/app/assets/images/" + Strings.toString(_tokenId) + ".jpg?raw=true";
         idToOwner[_tokenId] = _to;
         tokenCounter++;
         emit Mint(_to, _tokenId, _ipfsHash);
@@ -30,7 +29,7 @@ contract MyNFT {
     function mintPlanet(address _to, bytes32 _ipfsHash) public {
         uint256 _tokenId = tokenCounter;
         idToEyeColor[_tokenId] = colors[random(0, 5)];
-        idToUrL[_tokenId] = "https://github.com/WyattChase/star-wars-guide/blob/master/app/assets/images/" + Strings.toString(_tokenId) + ".jpg?raw=true";
+        // idToUrL[_tokenId] = string(abi.encodePacked("https://github.com/WyattChase/star-wars-guide/blob/master/app/assets/images/",[_tokenId], ".jpg?raw=true" )) ;
         idToOwner[_tokenId] = _to;
         tokenCounter++;
         emit Mint(_to, _tokenId, _ipfsHash);
